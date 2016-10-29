@@ -3,4 +3,4 @@
 ![enter description here][1]
 
 
-  [1]: https://raw.githubusercontent.com/chenjingyuanku/SerialHelper/master/Image/UI.png
+  [1]: https://raw.githubusercontent.com/chenjingyuanku/SerialHelper/master/Image/UI.jpg
