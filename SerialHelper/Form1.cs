@@ -6,7 +6,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
-//using System.Threading.Tasks;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
 using System.Runtime.InteropServices;
@@ -280,7 +280,11 @@ namespace SerialHelper
             ParityBox.SelectedIndex = 0;
             StopBitBox.SelectedIndex = 0;
             RefreshCOMList();
-            SerialPortBox.SelectedIndex = 0;
+            try
+            {
+                SerialPortBox.SelectedIndex = 0;
+            }
+            catch { }
             EncodeBox.SelectedIndex = 0;
             DynamicByteProvider myIByteProviderRX = new DynamicByteProvider(new byte[0]);
             hexBoxTX.ByteProvider = myIByteProviderRX;
@@ -300,16 +304,21 @@ namespace SerialHelper
 
             if (serialPort1.IsOpen == false)
             {
-                int startIndex, endIndex;
-                startIndex = SerialPortBox.SelectedItem.ToString().LastIndexOf("(");
-                endIndex = SerialPortBox.SelectedItem.ToString().LastIndexOf(")");
-                string comPortName = SerialPortBox.SelectedItem.ToString().Substring(startIndex + 1, endIndex - startIndex - 1);
-                //设置串口属性
-                serialPort1.StopBits = stopBitsArr[StopBitBox.SelectedIndex];
-                serialPort1.Parity = parityArr[ParityBox.SelectedIndex];
-                serialPort1.BaudRate = baudRateArr[BaudRateBox.SelectedIndex];
-                serialPort1.DataBits = dataLenthArr[DataLenthBox.SelectedIndex];
-                serialPort1.PortName = comPortName;
+                try
+                {
+                    int startIndex, endIndex;
+                    startIndex = SerialPortBox.SelectedItem.ToString().LastIndexOf("(");
+                    endIndex = SerialPortBox.SelectedItem.ToString().LastIndexOf(")");
+                    string comPortName = SerialPortBox.SelectedItem.ToString().Substring(startIndex + 1, endIndex - startIndex - 1);
+                    //设置串口属性
+                    serialPort1.StopBits = stopBitsArr[StopBitBox.SelectedIndex];
+                    serialPort1.Parity = parityArr[ParityBox.SelectedIndex];
+                    serialPort1.BaudRate = baudRateArr[BaudRateBox.SelectedIndex];
+                    serialPort1.DataBits = dataLenthArr[DataLenthBox.SelectedIndex];
+                    serialPort1.PortName = comPortName;
+                }
+                catch { }
+
                 
                 switch(encodeBoxIndex)
                 {
