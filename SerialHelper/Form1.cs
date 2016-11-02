@@ -240,6 +240,7 @@ namespace SerialHelper
             if (serialPort1.IsOpen == false)
             {
                 setWidget(true);
+                OpenSerialButton.Text = "打开串口";
             }
             OpenSerialButton.Enabled = true;
         }
