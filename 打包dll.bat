@@ -1,0 +1,1 @@
+.\packages\LibZ.Bootstrap.1.2.0.0\tools\libz.exe inject-dll --assembly .\SerialHelper\bin\Debug\SerialHelper.exe --include .\SerialHelper\bin\Debug\*.dll --move
