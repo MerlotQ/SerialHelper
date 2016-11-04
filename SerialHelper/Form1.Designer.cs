@@ -54,10 +54,11 @@
             this.clearRXButton = new System.Windows.Forms.Button();
             this.clearTXButton = new System.Windows.Forms.Button();
             this.checkBox_loopback = new System.Windows.Forms.CheckBox();
-            this.hexBoxTX = new Be.Windows.Forms.HexBox();
-            this.hexBoxRX = new Be.Windows.Forms.HexBox();
             this.label6 = new System.Windows.Forms.Label();
             this.EncodeBox = new System.Windows.Forms.ComboBox();
+            this.checkBox_sendNewLine = new System.Windows.Forms.CheckBox();
+            this.hexBoxTX = new Be.Windows.Forms.HexBox();
+            this.hexBoxRX = new Be.Windows.Forms.HexBox();
             ((System.ComponentModel.ISupportInitialize)(this.sendTime)).BeginInit();
             this.SuspendLayout();
             // 
@@ -239,7 +240,7 @@
             this.checkBox_RXhex.AutoSize = true;
             this.checkBox_RXhex.BackColor = System.Drawing.Color.Transparent;
             this.checkBox_RXhex.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.checkBox_RXhex.Location = new System.Drawing.Point(12, 139);
+            this.checkBox_RXhex.Location = new System.Drawing.Point(12, 130);
             this.checkBox_RXhex.Name = "checkBox_RXhex";
             this.checkBox_RXhex.Size = new System.Drawing.Size(96, 23);
             this.checkBox_RXhex.TabIndex = 38;
@@ -253,11 +254,11 @@
             this.textBox_TX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox_TX.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.textBox_TX.Location = new System.Drawing.Point(12, 173);
+            this.textBox_TX.Location = new System.Drawing.Point(12, 199);
             this.textBox_TX.Multiline = true;
             this.textBox_TX.Name = "textBox_TX";
             this.textBox_TX.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_TX.Size = new System.Drawing.Size(406, 271);
+            this.textBox_TX.Size = new System.Drawing.Size(406, 245);
             this.textBox_TX.TabIndex = 40;
             // 
             // textBox_RX
@@ -273,13 +274,15 @@
             this.textBox_RX.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox_RX.Size = new System.Drawing.Size(524, 382);
             this.textBox_RX.TabIndex = 41;
+            this.textBox_RX.TextChanged += new System.EventHandler(this.textBox_RX_TextChanged);
             // 
             // SendButton
             // 
             this.SendButton.BackColor = System.Drawing.Color.Transparent;
-            this.SendButton.Location = new System.Drawing.Point(343, 137);
+            this.SendButton.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SendButton.Location = new System.Drawing.Point(239, 137);
             this.SendButton.Name = "SendButton";
-            this.SendButton.Size = new System.Drawing.Size(75, 30);
+            this.SendButton.Size = new System.Drawing.Size(179, 50);
             this.SendButton.TabIndex = 42;
             this.SendButton.Text = "发送";
             this.SendButton.UseVisualStyleBackColor = false;
@@ -293,7 +296,7 @@
             0,
             0,
             0});
-            this.sendTime.Location = new System.Drawing.Point(231, 138);
+            this.sendTime.Location = new System.Drawing.Point(122, 158);
             this.sendTime.Maximum = new decimal(new int[] {
             3600000,
             0,
@@ -313,7 +316,7 @@
             this.checkBox_RegularlySend.AutoSize = true;
             this.checkBox_RegularlySend.BackColor = System.Drawing.Color.Transparent;
             this.checkBox_RegularlySend.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.checkBox_RegularlySend.Location = new System.Drawing.Point(125, 139);
+            this.checkBox_RegularlySend.Location = new System.Drawing.Point(125, 130);
             this.checkBox_RegularlySend.Name = "checkBox_RegularlySend";
             this.checkBox_RegularlySend.Size = new System.Drawing.Size(104, 23);
             this.checkBox_RegularlySend.TabIndex = 46;
@@ -328,7 +331,7 @@
             // clearRXButton
             // 
             this.clearRXButton.BackColor = System.Drawing.Color.Transparent;
-            this.clearRXButton.Location = new System.Drawing.Point(343, 58);
+            this.clearRXButton.Location = new System.Drawing.Point(343, 19);
             this.clearRXButton.Name = "clearRXButton";
             this.clearRXButton.Size = new System.Drawing.Size(75, 32);
             this.clearRXButton.TabIndex = 47;
@@ -339,7 +342,7 @@
             // clearTXButton
             // 
             this.clearTXButton.BackColor = System.Drawing.Color.Transparent;
-            this.clearTXButton.Location = new System.Drawing.Point(343, 19);
+            this.clearTXButton.Location = new System.Drawing.Point(343, 58);
             this.clearTXButton.Name = "clearTXButton";
             this.clearTXButton.Size = new System.Drawing.Size(75, 32);
             this.clearTXButton.TabIndex = 48;
@@ -358,39 +361,6 @@
             this.checkBox_loopback.TabIndex = 49;
             this.checkBox_loopback.Text = "回环测试";
             this.checkBox_loopback.UseVisualStyleBackColor = false;
-            // 
-            // hexBoxTX
-            // 
-            this.hexBoxTX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.hexBoxTX.BytesPerLine = 8;
-            this.hexBoxTX.Font = new System.Drawing.Font("Consolas", 14F);
-            this.hexBoxTX.LineInfoForeColor = System.Drawing.Color.Empty;
-            this.hexBoxTX.Location = new System.Drawing.Point(12, 173);
-            this.hexBoxTX.Name = "hexBoxTX";
-            this.hexBoxTX.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hexBoxTX.Size = new System.Drawing.Size(406, 271);
-            this.hexBoxTX.StringViewVisible = true;
-            this.hexBoxTX.TabIndex = 0;
-            this.hexBoxTX.UseFixedBytesPerLine = true;
-            this.hexBoxTX.VScrollBarVisible = true;
-            // 
-            // hexBoxRX
-            // 
-            this.hexBoxRX.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.hexBoxRX.BytesPerLine = 10;
-            this.hexBoxRX.Font = new System.Drawing.Font("Consolas", 12F);
-            this.hexBoxRX.LineInfoForeColor = System.Drawing.Color.Empty;
-            this.hexBoxRX.Location = new System.Drawing.Point(435, 62);
-            this.hexBoxRX.Name = "hexBoxRX";
-            this.hexBoxRX.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hexBoxRX.Size = new System.Drawing.Size(525, 382);
-            this.hexBoxRX.StringViewVisible = true;
-            this.hexBoxRX.TabIndex = 39;
-            this.hexBoxRX.UseFixedBytesPerLine = true;
-            this.hexBoxRX.VScrollBarVisible = true;
             // 
             // label6
             // 
@@ -421,11 +391,57 @@
             this.EncodeBox.TabIndex = 51;
             this.EncodeBox.SelectedIndexChanged += new System.EventHandler(this.EncodeBox_SelectedIndexChanged);
             // 
+            // checkBox_sendNewLine
+            // 
+            this.checkBox_sendNewLine.AutoSize = true;
+            this.checkBox_sendNewLine.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox_sendNewLine.Font = new System.Drawing.Font("宋体", 14.25F);
+            this.checkBox_sendNewLine.Location = new System.Drawing.Point(12, 159);
+            this.checkBox_sendNewLine.Name = "checkBox_sendNewLine";
+            this.checkBox_sendNewLine.Size = new System.Drawing.Size(104, 23);
+            this.checkBox_sendNewLine.TabIndex = 52;
+            this.checkBox_sendNewLine.Text = "发送新行";
+            this.checkBox_sendNewLine.UseVisualStyleBackColor = false;
+            // 
+            // hexBoxTX
+            // 
+            this.hexBoxTX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.hexBoxTX.BytesPerLine = 8;
+            this.hexBoxTX.Font = new System.Drawing.Font("Consolas", 14F);
+            this.hexBoxTX.LineInfoForeColor = System.Drawing.Color.Empty;
+            this.hexBoxTX.Location = new System.Drawing.Point(12, 199);
+            this.hexBoxTX.Name = "hexBoxTX";
+            this.hexBoxTX.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hexBoxTX.Size = new System.Drawing.Size(406, 245);
+            this.hexBoxTX.StringViewVisible = true;
+            this.hexBoxTX.TabIndex = 0;
+            this.hexBoxTX.UseFixedBytesPerLine = true;
+            this.hexBoxTX.VScrollBarVisible = true;
+            // 
+            // hexBoxRX
+            // 
+            this.hexBoxRX.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hexBoxRX.BytesPerLine = 10;
+            this.hexBoxRX.Font = new System.Drawing.Font("Consolas", 12F);
+            this.hexBoxRX.LineInfoForeColor = System.Drawing.Color.Empty;
+            this.hexBoxRX.Location = new System.Drawing.Point(435, 62);
+            this.hexBoxRX.Name = "hexBoxRX";
+            this.hexBoxRX.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hexBoxRX.Size = new System.Drawing.Size(525, 382);
+            this.hexBoxRX.StringViewVisible = true;
+            this.hexBoxRX.TabIndex = 39;
+            this.hexBoxRX.UseFixedBytesPerLine = true;
+            this.hexBoxRX.VScrollBarVisible = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 456);
+            this.Controls.Add(this.checkBox_sendNewLine);
             this.Controls.Add(this.EncodeBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.checkBox_loopback);
@@ -493,6 +509,7 @@
         private System.Windows.Forms.CheckBox checkBox_loopback;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox EncodeBox;
+        private System.Windows.Forms.CheckBox checkBox_sendNewLine;
     }
 }
 

@@ -408,17 +408,32 @@ namespace SerialHelper
         private void button2_Click(object sender, EventArgs e)
         {
             //发送文本
-            if (textBox_TX.Text != null && serialPort1.IsOpen && checkBox_TXhex.Checked == false)
+            try
             {
-                serialPort1.Write(textBox_TX.Text);
-                //serialPort1.
+                if (textBox_TX.Text != null && serialPort1.IsOpen && checkBox_TXhex.Checked == false)
+                {
+                    if (checkBox_sendNewLine.Checked)
+                        serialPort1.Write(textBox_TX.Text + "\r\n");
+                    else
+                        serialPort1.Write(textBox_TX.Text);
+                }
+                else if (serialPort1.IsOpen && checkBox_TXhex.Checked == true)
+                {
+                    byte[] btss;
+                    btss = hexBoxTX.GetBytes();
+                    if (checkBox_sendNewLine.Checked)
+                    {
+                        btss[btss.Length] = 0x0d;
+                        btss[btss.Length] = 0x0a;
+                        serialPort1.Write(btss.ToArray(), 0, btss.Length);
+                    }
+                    else
+                    {
+                        serialPort1.Write(hexBoxTX.GetBytes().ToArray(), 0, hexBoxTX.GetBytes().Length);
+                    }
+                }
             }
-            else if(serialPort1.IsOpen && checkBox_TXhex.Checked == true)
-            {
-                byte[] btss;
-                btss = hexBoxTX.GetBytes();
-                serialPort1.Write(hexBoxTX.GetBytes().ToArray(), 0, hexBoxTX.GetBytes().Length);
-            }
+            catch { }
             //发送HEX
         }
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -486,17 +501,32 @@ namespace SerialHelper
         private void timer2_Tick(object sender, EventArgs e)
         {
             timer2.Interval = Convert.ToInt32(sendTime.Value);
-            if (textBox_TX.Text != null && serialPort1.IsOpen && checkBox_TXhex.Checked == false)
+            try
             {
-                serialPort1.Write(textBox_TX.Text);
+                if (textBox_TX.Text != null && serialPort1.IsOpen && checkBox_TXhex.Checked == false)
+                {
+                    if (checkBox_sendNewLine.Checked)
+                        serialPort1.Write(textBox_TX.Text + "\r\n");
+                    else
+                        serialPort1.Write(textBox_TX.Text);
+                }
+                else if (serialPort1.IsOpen && checkBox_TXhex.Checked == true)
+                {
+                    byte[] btss;
+                    btss = hexBoxTX.GetBytes();
+                    if (checkBox_sendNewLine.Checked)
+                    {
+                        btss[btss.Length] = 0x0d;
+                        btss[btss.Length] = 0x0a;
+                        serialPort1.Write(btss.ToArray(), 0, btss.Length);
+                    }
+                    else
+                    {
+                        serialPort1.Write(hexBoxTX.GetBytes().ToArray(), 0, hexBoxTX.GetBytes().Length);
+                    }
+                }
             }
-            else if (serialPort1.IsOpen && checkBox_TXhex.Checked == true)
-            {
-                byte[] btss;
-                btss = hexBoxTX.GetBytes();
-                serialPort1.Write(hexBoxTX.GetBytes().ToArray(), 0, hexBoxTX.GetBytes().Length);
-            }
-            
+            catch { }
         }
 
         private void clearRXButton_Click(object sender, EventArgs e)
@@ -519,6 +549,16 @@ namespace SerialHelper
         private void EncodeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             encodeBoxIndex = EncodeBox.SelectedIndex;
+        }
+
+        private void textBox_RX_TextChanged(object sender, EventArgs e)
+        {
+            textBox_RX.SelectionStart = textBox_RX.Text.Length;
+            textBox_RX.ScrollToCaret();
+            /*if (checkBox_TXhex.Checked == false)
+                textBox_TX.Focus();
+            else
+                hexBoxTX.Focus();*/
         }
     }
 }
