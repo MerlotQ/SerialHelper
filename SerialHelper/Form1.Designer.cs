@@ -59,7 +59,10 @@
             this.checkBox_sendNewLine = new System.Windows.Forms.CheckBox();
             this.hexBoxTX = new Be.Windows.Forms.HexBox();
             this.hexBoxRX = new Be.Windows.Forms.HexBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.sendTime)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // StopBitBox
@@ -72,7 +75,7 @@
             "1.5",
             "2",
             "无"});
-            this.StopBitBox.Location = new System.Drawing.Point(268, 19);
+            this.StopBitBox.Location = new System.Drawing.Point(268, 36);
             this.StopBitBox.Name = "StopBitBox";
             this.StopBitBox.Size = new System.Drawing.Size(62, 30);
             this.StopBitBox.TabIndex = 35;
@@ -88,7 +91,7 @@
             "1校验",
             "奇校验",
             "偶校验"});
-            this.ParityBox.Location = new System.Drawing.Point(91, 17);
+            this.ParityBox.Location = new System.Drawing.Point(91, 34);
             this.ParityBox.Name = "ParityBox";
             this.ParityBox.Size = new System.Drawing.Size(84, 30);
             this.ParityBox.TabIndex = 34;
@@ -98,7 +101,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.label5.Location = new System.Drawing.Point(186, 23);
+            this.label5.Location = new System.Drawing.Point(186, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 19);
             this.label5.TabIndex = 33;
@@ -109,7 +112,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.label4.Location = new System.Drawing.Point(12, 23);
+            this.label4.Location = new System.Drawing.Point(12, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 19);
             this.label4.TabIndex = 32;
@@ -125,7 +128,7 @@
             "6",
             "7",
             "8"});
-            this.DataLenthBox.Location = new System.Drawing.Point(268, 58);
+            this.DataLenthBox.Location = new System.Drawing.Point(268, 75);
             this.DataLenthBox.Name = "DataLenthBox";
             this.DataLenthBox.Size = new System.Drawing.Size(62, 30);
             this.DataLenthBox.TabIndex = 31;
@@ -136,7 +139,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.label3.Location = new System.Drawing.Point(186, 62);
+            this.label3.Location = new System.Drawing.Point(186, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 19);
             this.label3.TabIndex = 30;
@@ -147,7 +150,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.label2.Location = new System.Drawing.Point(431, 23);
+            this.label2.Location = new System.Drawing.Point(431, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 29;
@@ -158,7 +161,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.label1.Location = new System.Drawing.Point(12, 62);
+            this.label1.Location = new System.Drawing.Point(12, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 19);
             this.label1.TabIndex = 28;
@@ -182,7 +185,7 @@
             "115200",
             "128000",
             "256000"});
-            this.BaudRateBox.Location = new System.Drawing.Point(91, 58);
+            this.BaudRateBox.Location = new System.Drawing.Point(91, 75);
             this.BaudRateBox.Name = "BaudRateBox";
             this.BaudRateBox.Size = new System.Drawing.Size(84, 30);
             this.BaudRateBox.TabIndex = 27;
@@ -191,7 +194,7 @@
             // 
             this.OpenSerialButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenSerialButton.BackColor = System.Drawing.Color.Transparent;
-            this.OpenSerialButton.Location = new System.Drawing.Point(885, 19);
+            this.OpenSerialButton.Location = new System.Drawing.Point(885, 36);
             this.OpenSerialButton.Name = "OpenSerialButton";
             this.OpenSerialButton.Size = new System.Drawing.Size(75, 30);
             this.OpenSerialButton.TabIndex = 26;
@@ -206,7 +209,7 @@
             this.SerialPortBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SerialPortBox.Font = new System.Drawing.Font("Consolas", 14F);
             this.SerialPortBox.FormattingEnabled = true;
-            this.SerialPortBox.Location = new System.Drawing.Point(494, 20);
+            this.SerialPortBox.Location = new System.Drawing.Point(494, 37);
             this.SerialPortBox.Name = "SerialPortBox";
             this.SerialPortBox.Size = new System.Drawing.Size(385, 30);
             this.SerialPortBox.TabIndex = 36;
@@ -227,7 +230,7 @@
             this.checkBox_TXhex.AutoSize = true;
             this.checkBox_TXhex.BackColor = System.Drawing.Color.Transparent;
             this.checkBox_TXhex.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.checkBox_TXhex.Location = new System.Drawing.Point(12, 101);
+            this.checkBox_TXhex.Location = new System.Drawing.Point(12, 118);
             this.checkBox_TXhex.Name = "checkBox_TXhex";
             this.checkBox_TXhex.Size = new System.Drawing.Size(96, 23);
             this.checkBox_TXhex.TabIndex = 37;
@@ -240,7 +243,7 @@
             this.checkBox_RXhex.AutoSize = true;
             this.checkBox_RXhex.BackColor = System.Drawing.Color.Transparent;
             this.checkBox_RXhex.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.checkBox_RXhex.Location = new System.Drawing.Point(12, 130);
+            this.checkBox_RXhex.Location = new System.Drawing.Point(12, 147);
             this.checkBox_RXhex.Name = "checkBox_RXhex";
             this.checkBox_RXhex.Size = new System.Drawing.Size(96, 23);
             this.checkBox_RXhex.TabIndex = 38;
@@ -254,11 +257,11 @@
             this.textBox_TX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox_TX.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.textBox_TX.Location = new System.Drawing.Point(12, 199);
+            this.textBox_TX.Location = new System.Drawing.Point(12, 216);
             this.textBox_TX.Multiline = true;
             this.textBox_TX.Name = "textBox_TX";
             this.textBox_TX.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_TX.Size = new System.Drawing.Size(406, 245);
+            this.textBox_TX.Size = new System.Drawing.Size(406, 225);
             this.textBox_TX.TabIndex = 40;
             // 
             // textBox_RX
@@ -268,11 +271,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_RX.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.textBox_RX.Location = new System.Drawing.Point(435, 62);
+            this.textBox_RX.Location = new System.Drawing.Point(435, 79);
             this.textBox_RX.Multiline = true;
             this.textBox_RX.Name = "textBox_RX";
             this.textBox_RX.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_RX.Size = new System.Drawing.Size(524, 382);
+            this.textBox_RX.Size = new System.Drawing.Size(524, 362);
             this.textBox_RX.TabIndex = 41;
             this.textBox_RX.TextChanged += new System.EventHandler(this.textBox_RX_TextChanged);
             // 
@@ -280,7 +283,7 @@
             // 
             this.SendButton.BackColor = System.Drawing.Color.Transparent;
             this.SendButton.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SendButton.Location = new System.Drawing.Point(239, 137);
+            this.SendButton.Location = new System.Drawing.Point(239, 154);
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(179, 50);
             this.SendButton.TabIndex = 42;
@@ -296,7 +299,7 @@
             0,
             0,
             0});
-            this.sendTime.Location = new System.Drawing.Point(122, 158);
+            this.sendTime.Location = new System.Drawing.Point(122, 175);
             this.sendTime.Maximum = new decimal(new int[] {
             3600000,
             0,
@@ -316,7 +319,7 @@
             this.checkBox_RegularlySend.AutoSize = true;
             this.checkBox_RegularlySend.BackColor = System.Drawing.Color.Transparent;
             this.checkBox_RegularlySend.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.checkBox_RegularlySend.Location = new System.Drawing.Point(125, 130);
+            this.checkBox_RegularlySend.Location = new System.Drawing.Point(125, 147);
             this.checkBox_RegularlySend.Name = "checkBox_RegularlySend";
             this.checkBox_RegularlySend.Size = new System.Drawing.Size(104, 23);
             this.checkBox_RegularlySend.TabIndex = 46;
@@ -331,7 +334,7 @@
             // clearRXButton
             // 
             this.clearRXButton.BackColor = System.Drawing.Color.Transparent;
-            this.clearRXButton.Location = new System.Drawing.Point(343, 19);
+            this.clearRXButton.Location = new System.Drawing.Point(343, 36);
             this.clearRXButton.Name = "clearRXButton";
             this.clearRXButton.Size = new System.Drawing.Size(75, 32);
             this.clearRXButton.TabIndex = 47;
@@ -342,7 +345,7 @@
             // clearTXButton
             // 
             this.clearTXButton.BackColor = System.Drawing.Color.Transparent;
-            this.clearTXButton.Location = new System.Drawing.Point(343, 58);
+            this.clearTXButton.Location = new System.Drawing.Point(343, 75);
             this.clearTXButton.Name = "clearTXButton";
             this.clearTXButton.Size = new System.Drawing.Size(75, 32);
             this.clearTXButton.TabIndex = 48;
@@ -355,7 +358,7 @@
             this.checkBox_loopback.AutoSize = true;
             this.checkBox_loopback.BackColor = System.Drawing.Color.Transparent;
             this.checkBox_loopback.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.checkBox_loopback.Location = new System.Drawing.Point(125, 101);
+            this.checkBox_loopback.Location = new System.Drawing.Point(125, 118);
             this.checkBox_loopback.Name = "checkBox_loopback";
             this.checkBox_loopback.Size = new System.Drawing.Size(104, 23);
             this.checkBox_loopback.TabIndex = 49;
@@ -367,7 +370,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.label6.Location = new System.Drawing.Point(235, 102);
+            this.label6.Location = new System.Drawing.Point(235, 119);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 19);
             this.label6.TabIndex = 50;
@@ -385,7 +388,7 @@
             "UTF7",
             "UTF8",
             "UTF32"});
-            this.EncodeBox.Location = new System.Drawing.Point(298, 97);
+            this.EncodeBox.Location = new System.Drawing.Point(298, 114);
             this.EncodeBox.Name = "EncodeBox";
             this.EncodeBox.Size = new System.Drawing.Size(120, 30);
             this.EncodeBox.TabIndex = 51;
@@ -396,7 +399,7 @@
             this.checkBox_sendNewLine.AutoSize = true;
             this.checkBox_sendNewLine.BackColor = System.Drawing.Color.Transparent;
             this.checkBox_sendNewLine.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.checkBox_sendNewLine.Location = new System.Drawing.Point(12, 159);
+            this.checkBox_sendNewLine.Location = new System.Drawing.Point(12, 176);
             this.checkBox_sendNewLine.Name = "checkBox_sendNewLine";
             this.checkBox_sendNewLine.Size = new System.Drawing.Size(104, 23);
             this.checkBox_sendNewLine.TabIndex = 52;
@@ -410,10 +413,10 @@
             this.hexBoxTX.BytesPerLine = 8;
             this.hexBoxTX.Font = new System.Drawing.Font("Consolas", 14F);
             this.hexBoxTX.LineInfoForeColor = System.Drawing.Color.Empty;
-            this.hexBoxTX.Location = new System.Drawing.Point(12, 199);
+            this.hexBoxTX.Location = new System.Drawing.Point(12, 216);
             this.hexBoxTX.Name = "hexBoxTX";
             this.hexBoxTX.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hexBoxTX.Size = new System.Drawing.Size(406, 245);
+            this.hexBoxTX.Size = new System.Drawing.Size(406, 225);
             this.hexBoxTX.StringViewVisible = true;
             this.hexBoxTX.TabIndex = 0;
             this.hexBoxTX.UseFixedBytesPerLine = true;
@@ -427,14 +430,31 @@
             this.hexBoxRX.BytesPerLine = 10;
             this.hexBoxRX.Font = new System.Drawing.Font("Consolas", 12F);
             this.hexBoxRX.LineInfoForeColor = System.Drawing.Color.Empty;
-            this.hexBoxRX.Location = new System.Drawing.Point(435, 62);
+            this.hexBoxRX.Location = new System.Drawing.Point(435, 79);
             this.hexBoxRX.Name = "hexBoxRX";
             this.hexBoxRX.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hexBoxRX.Size = new System.Drawing.Size(525, 382);
+            this.hexBoxRX.Size = new System.Drawing.Size(525, 362);
             this.hexBoxRX.StringViewVisible = true;
             this.hexBoxRX.TabIndex = 39;
             this.hexBoxRX.UseFixedBytesPerLine = true;
             this.hexBoxRX.VScrollBarVisible = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.更新ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(971, 31);
+            this.menuStrip1.TabIndex = 53;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 更新ToolStripMenuItem
+            // 
+            this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
+            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(56, 27);
+            this.更新ToolStripMenuItem.Text = "更新";
+            this.更新ToolStripMenuItem.Click += new System.EventHandler(this.更新ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -467,13 +487,17 @@
             this.Controls.Add(this.textBox_TX);
             this.Controls.Add(this.hexBoxTX);
             this.Controls.Add(this.hexBoxRX);
+            this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "串口助手  --by浙江师范大学陈竞远";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.sendTime)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,6 +534,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox EncodeBox;
         private System.Windows.Forms.CheckBox checkBox_sendNewLine;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
     }
 }
 

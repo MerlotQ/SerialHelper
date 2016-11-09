@@ -243,6 +243,7 @@ namespace SerialHelper
                 OpenSerialButton.Text = "打开串口";
             }
             OpenSerialButton.Enabled = true;
+            this.Refresh();
         }
 
         protected override void WndProc(ref Message m)
@@ -308,6 +309,7 @@ namespace SerialHelper
                 try
                 {
                     int startIndex, endIndex;
+                    m_IsTryToClosePort = false;
                     startIndex = SerialPortBox.SelectedItem.ToString().LastIndexOf("(");
                     endIndex = SerialPortBox.SelectedItem.ToString().LastIndexOf(")");
                     string comPortName = SerialPortBox.SelectedItem.ToString().Substring(startIndex + 1, endIndex - startIndex - 1);
@@ -555,10 +557,11 @@ namespace SerialHelper
         {
             textBox_RX.SelectionStart = textBox_RX.Text.Length;
             textBox_RX.ScrollToCaret();
-            /*if (checkBox_TXhex.Checked == false)
-                textBox_TX.Focus();
-            else
-                hexBoxTX.Focus();*/
+        }
+        
+        private void 更新ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
