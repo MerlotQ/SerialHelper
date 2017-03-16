@@ -533,8 +533,11 @@ namespace SerialHelper
 
         private void clearRXButton_Click(object sender, EventArgs e)
         {
-            textBox_RX.Text = "";
-            hexBoxRX.Clear();
+            if (m_IsReceiving == false)
+            {
+                textBox_RX.Text = "";
+                hexBoxRX.Clear();
+            }
         }
 
         private void clearTXButton_Click(object sender, EventArgs e)
@@ -546,6 +549,7 @@ namespace SerialHelper
         private void Form1_Resize(object sender, EventArgs e)
         {
             SetHexPerLine(hexBoxRX.Size.Width / 44);
+            
         }
 
         private void EncodeBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -559,9 +563,5 @@ namespace SerialHelper
             textBox_RX.ScrollToCaret();
         }
         
-        private void 更新ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
